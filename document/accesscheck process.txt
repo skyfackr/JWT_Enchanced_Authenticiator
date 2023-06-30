@@ -1,0 +1,9 @@
+start from ACVER 0.1:
+	1. use JWT standard SDK to verify and unload the token
+	2. check JWT header to recognize if this is JWTEA token
+	3. based on version in header, verify and load the JWT payload and get necessary data
+	4. save Client RSA and algo data. return a JAVA instance and can receive the siged payload and signature to verify
+		the RSA pub has a getter
+		user may have own logic to sign data. So the SDK will only get key and give a method to help verify the signature
+		after JWT verify passed, user can verify Client RSA signature themselves and pass or reject the request by their own logic
+	5. if verify passed, user can read all field in payload and header as a map. "P-JWTEA-" prefix field can be excluded or not

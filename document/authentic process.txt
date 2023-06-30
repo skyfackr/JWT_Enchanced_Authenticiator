@@ -1,0 +1,10 @@
+start from AUTHVER 0.1:
+	1. try decode to utf-8 and check if json format
+	2. check "version" field and check if version supported
+	3. based on version, load all other required field and check format(ignore custom fields)
+	4. check timestamp(vaild time period can set in properties)
+	5. check if salt number is registered in vaild time period(solve share salt number registeration in the future. Now only support to save local)
+	6. decrypt the ID field and check if ID text schema is correct
+	7. verify credential
+	8. if credential passed, check signature
+	9. issue JWTEA token

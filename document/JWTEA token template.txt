@@ -7,9 +7,8 @@ Definition:
 	ACVER: Server/AccessCheck code version
 
 additional field in header:
-	All version of header additional field are supposed to be recognized by Server/AccessCheck in any ACVER
 	Header schema used depend on the version of JWTEA SDK on Server/Authentic
-	start from AUTHVER 0.1:
+	start from AUTHVER 0.1/ACVER 0.1:
 		"ext":"wang.skycloud.JWTEA:{version}"
 		Example: "ext":"wang.skycloud.JWTEA:1.0"
 		or

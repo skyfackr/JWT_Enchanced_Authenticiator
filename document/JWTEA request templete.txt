@@ -7,8 +7,8 @@ encode as base64 before send request
 		"ID":"",//encrypted text by Server RSA, see #ID Origin text
 		"SRSAID":"",//Server RSA Public Key ID
 		"IDALGO":""//ID encrypt algorithm
-		"salt":"",//random number
-		"timestamp":""//timestamp
+		"salt":0,//random number
+		"timestamp":""//timestamp UTF time yyyy-MM-ddTHH:mm:ssZ
 	},
 	"signAlgo":"",//payload signature sign algorithm
 	"signature":""//payload signature signed by Client RSA
