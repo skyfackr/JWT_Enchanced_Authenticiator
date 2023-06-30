@@ -1,0 +1,30 @@
+This list may be updated following the development of the project and version updated
+
+each part encode to base64. support with standard JWT
+
+Definition:
+	AUTHVER: Server/Authentic code version 
+	ACVER: Server/AccessCheck code version
+
+additional field in header:
+	All version of header additional field are supposed to be recognized by Server/AccessCheck in any ACVER
+	Header schema used depend on the version of JWTEA SDK on Server/Authentic
+	start from AUTHVER 0.1:
+		"ext":"wang.skycloud.JWTEA:{version}"
+		Example: "ext":"wang.skycloud.JWTEA:1.0"
+		or
+		"ext":["wang.skycloud.JWTEA:{version}"[,...]]
+	The "version" only means the version of JWTEA additional field schema here. It does not mean the version of JWTEA SDK.
+	The version of Server/Authentic used for JWT generation and Server/AccessCheck used for validation can be set in properties file.
+	Server/Authentic can only set ONE version for generation. Server/AccessCheck can set multiple versions allowed for validation. 
+
+Payload has specific field for JWTEA. They started with "P-JWTEA-"
+
+The JWTEA SDK code will not allow other fields with this prefix.
+
+following are used fields:
+
+	start from 1.0:
+		P-JWTEA-ALGO: algorithm allowed for application payload signature with Client RSA
+		P-JWTEA-KEY: Client RSA public key for signature
+		P-JWTEA-AUTHVER: version of Server/Authentic code. it does not mean the version of JWTEA additional field schema.

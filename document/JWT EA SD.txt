@@ -1,0 +1,43 @@
+title JWT enchanced Authenticator
+
+note over Client: Client RSA private, \nUser ID/Password
+
+note over Server/static:Server RSA public key list
+
+note over Server/Authentic:Server RSA private key, \n JWT RSA private key
+
+note over Server/AccessCheck:  JWT RSA Public key
+
+Client->Server/static: (1)get Server RSA public key(not JWT key)
+
+Server/static->Client:(2) return nearest RSA public key
+
+Client->Client: (3.1)generate RSA private, encrypt Client RSA public \n by Server RSA with user credential
+Client->Client:(3.2) signed with random number\n and timestamp by Client RSA, add to JWT payload
+
+Client->Server/Authentic: (4)send JWT request
+
+
+Server/Authentic->Client:(4.1) Authentic failed. Process aborted
+Server/Authentic->Client:(4.2) Sign JWT by JWT RSA. Send back
+
+
+note over Server/Authentic,Server/AccessCheck:Authentic and Access Check use zero-knowledge to perform access.
+
+note over Client,Server/AccessCheck: Authentic part and Application part should not connect directly to ensure application level can be expanded flat
+
+note left of Server/Authentic:⬆Authentic/JWT request
+
+note right of Server/Authentic:⬇Application/JWT use
+
+Client->Server/AccessCheck: (5)Send request with JWT, sign request payload, random number, and timestamp with Client RSA
+
+Server/AccessCheck->Server/AccessCheck: (6.1)Check JWT eligiblity
+
+Server/AccessCheck->Server/AccessCheck: (6.2)Check if Client RSA sign is eligible and\n JWT payload has Client RSA public\n (Client RSA public is trustable if it is in JWT\n payload and JWT is eligible)
+
+Server/AccessCheck->Client:(7.1) Authentic failed. Process aborted.
+
+Server/AccessCheck->Server/Application:(7.2) Access granted. Unzip JWT data and \n send request to application level
+
+Server/Application->Client:(8) Send response
