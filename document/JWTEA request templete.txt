@@ -19,9 +19,7 @@ version:1.0
 #ID Origin text
 	{
 		"CRSAPUB":"",//Client RSA Public Key
-		"credential":{
-			//custom credential field
-		}
+		"credential":""//custom credential field
 	}
 
 note: the Server/Authentic may allow multiple versions of request to grant access
