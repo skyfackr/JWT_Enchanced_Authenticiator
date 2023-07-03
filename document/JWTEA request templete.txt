@@ -1,28 +1,28 @@
 decode=utf-8
 encode as base64 before send request
-
-{
-	"version":""//request schema version not SDK version 
-	"payload":{
-		"ID":"",//encrypted text by Server RSA, see #ID Origin text
-		"SRSAID":"",//Server RSA Public Key ID
-		"IDALGO":""//ID encrypt algorithm
-		"salt":0,//random number
-		"timestamp":""//timestamp UTF time yyyy-MM-ddTHH:mm:ssZ
-	},
-	"signAlgo":"",//payload signature sign algorithm
-	"signature":""//payload signature signed by Client RSA
-}
+version:1.0
+	{
+		"version":""//request schema version not SDK version 
+		"payload":{
+			"ID":"",//encrypted text by Server RSA, see #ID Origin text
+			"SRSAID":"",//Server RSA Public Key ID
+			"IDALGO":""//ID encrypt algorithm
+			"salt":0,//random number
+			"timestamp":""//timestamp UTF time yyyy-MM-ddTHH:mm:ssZ
+		},
+		"signAlgo":"",//payload signature sign algorithm
+		"signature":""//payload signature signed by Client RSA
+	}
 
 
 
 #ID Origin text
-{
-	"CRSAPUB":"",//Client RSA Public Key
-	"credential":{
-		//custom credential field
+	{
+		"CRSAPUB":"",//Client RSA Public Key
+		"credential":{
+			//custom credential field
+		}
 	}
-}
 
 note: the Server/Authentic may allow multiple versions of request to grant access
 add custom field allowed but should avoid collision. otherwise may cause unknown error
