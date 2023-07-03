@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import java.awt.*;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * 常量
@@ -30,6 +32,7 @@ public class Constant {
      * @return {@link Iterable}<{@link String}>
      */
     public static Iterable<String> getSupported_Request_Version() {
-        return Arrays.stream(Supported_Request_Version).toList();
+        //return Arrays.stream(Supported_Request_Version).toList();
+        return java.util.List.of(Supported_Request_Version);
     }
 }
