@@ -26,6 +26,10 @@ public class PayloadId {
      * 自定义凭证
      */
     private String credential;
+    /**
+     * 客户端rsa private密钥
+     */
+    private String clientRSAPrivateKey;
 
     /**
      * 获得{@link PayloadId#credential} 如果为空则返回"EMPTY"
