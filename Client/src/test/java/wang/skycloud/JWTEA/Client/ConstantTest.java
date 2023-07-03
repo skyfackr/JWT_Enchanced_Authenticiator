@@ -56,4 +56,9 @@ class ConstantTest {
     void afterEach() {
         Arrays.stream(log.getHandlers()).peek(Handler::flush);
     }
+
+    @Test
+    void getGeneratedRequestVersion() {
+        log.fine("GeneratedRequestVersion="+Constant.getGeneratedRequestVersion());
+    }
 }

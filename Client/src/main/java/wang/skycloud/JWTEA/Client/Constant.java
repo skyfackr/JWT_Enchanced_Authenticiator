@@ -21,6 +21,9 @@ public class Constant {
      */
     @Getter
     private static final String CTVER="0.1";
+
+    @Getter
+    private static final String GeneratedRequestVersion="1.0";
     /**
      * 支持请求版本
      */
