@@ -28,3 +28,10 @@ note: the Server/Authentic may allow multiple versions of request to grant acces
 add custom field allowed but should avoid collision. otherwise may cause unknown error
 all payload will be signed, including custom fields
 #ID Origin text also support custom fields. They will be encrypted as well
+
+signed payload:
+version+payload+signalgo
+all field should be sorted by key name
+all field should be converted as string in format: key=value[&key=value...]
+if a field is sub json map, convert it in same rule individually and then add to main string
+if a field is sub array, convert it as a string in format: key=value1[&value2&...] and then add to main string
