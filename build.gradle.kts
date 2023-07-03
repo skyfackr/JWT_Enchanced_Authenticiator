@@ -15,8 +15,10 @@ dependencies {
 
     implementation("org.apache.logging.log4j:log4j:2.20.0")
     implementation("com.auth0:java-jwt:4.3.0")
+    implementation("bouncycastle:bouncycastle-jce-jdk13:112")
     testImplementation("org.projectlombok:lombok:1.18.26")
     testImplementation("com.auth0:java-jwt:4.3.0")
+    testImplementation("bouncycastle:bouncycastle-jce-jdk13:112")
     annotationProcessor("org.projectlombok:lombok:1.18.26")
     implementation("org.projectlombok:lombok:1.18.26")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.26")
