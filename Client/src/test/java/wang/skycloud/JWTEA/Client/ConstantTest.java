@@ -43,9 +43,9 @@ class ConstantTest {
 //        Handler handler=new java.util.logging.StreamHandler(System.out,new java.util.logging.SimpleFormatter());
 //        log.addHandler(handler);
         log.addHandler(new java.util.logging.ConsoleHandler());
-        Arrays.stream(log.getHandlers()).forEach(h->h.setLevel(Level.FINE));
-        log.setLevel(Level.FINE);
-        log.fine("debug log set to console");
+        Arrays.stream(log.getHandlers()).forEach(h->h.setLevel(Level.FINER));
+        log.setLevel(Level.FINER);
+        log.config("debug log set to console");
     }
 
     @Test
