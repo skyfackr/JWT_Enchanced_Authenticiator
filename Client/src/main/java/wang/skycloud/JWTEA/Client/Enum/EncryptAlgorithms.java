@@ -1,11 +1,6 @@
 package wang.skycloud.JWTEA.Client.Enum;
 
 public enum EncryptAlgorithms {
-    HS256,
-
-    HS384,
-
-    HS512,
 
 
     RS256,
