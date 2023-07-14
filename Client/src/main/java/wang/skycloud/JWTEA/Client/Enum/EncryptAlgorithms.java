@@ -7,19 +7,12 @@ package wang.skycloud.JWTEA.Client.Enum;
  * @date 2023/07/03
  */
 public enum EncryptAlgorithms {
+    RSA,
+    ECDSA,
+    // below algorithm not implemented. finish them in the future base on my heart
+//    RSASSAPSS,
+//    X509
 
 
-    RS256,
-
-    RS384,
-
-    RS512,
-
-    ES256,
-
-
-    ES384,
-
-    ES512,
 
 }
