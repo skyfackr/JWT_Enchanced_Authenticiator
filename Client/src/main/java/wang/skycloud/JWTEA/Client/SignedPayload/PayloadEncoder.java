@@ -1,7 +1,7 @@
 package wang.skycloud.JWTEA.Client.SignedPayload;
 
 /**
- * 有效载荷编码器
+ * 将{@link SignedPayload}编码为标准可发送请求
  *
  * @author sky
  * @date 2023/07/03
