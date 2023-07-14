@@ -3,6 +3,7 @@ package wang.skycloud.JWTEA.Client.PreRequest;
 import lombok.*;
 import wang.skycloud.JWTEA.Client.Enum.EncryptAlgorithms;
 import wang.skycloud.JWTEA.Client.Enum.SignatureAlgorithms;
+import wang.skycloud.JWTEA.Client.PreRequest.Exceptions.PayloadContainsNullException;
 
 import java.util.Date;
 
@@ -16,18 +17,19 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@NoArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @ToString
 @EqualsAndHashCode
 public class PreRequestPayload {
     /**
      * 版本
      */
-    private String version;
+    private final String version="1.0";
     /**
      * id（加密区域）
      */
-    private PayloadId id;
+    @NonNull
+    private final PayloadId id;
     /**
      * 服务器rsaid
      */
@@ -55,13 +57,33 @@ public class PreRequestPayload {
     private SignatureAlgorithms signAlgo;
 
     /**
+     * 验证有效载荷
      * 验证payload是否为空
      *
-     *
+     * @throws PayloadContainsNullException 有效负载包含空
      */
-    void verifyPayload()
+    void verifyPayload() throws PayloadContainsNullException
     {
-        //TODO: verifyPayload not implemented created at 2023/7/3 16:26
-        throw new RuntimeException("verifyPayload not implemented");
+        if (!isPayloadFulfilled()) throw new PayloadContainsNullException(this);
+    }
+
+    /**
+     * 设置当前时间戳
+     */
+    void setCurrentTimeAsStamp()
+    {
+        //TODO: setCurrentTimeAsStamp not implemented created at 2023/7/14 15:53
+        throw new RuntimeException("setCurrentTimeAsStamp not implemented");
+    }
+
+    /**
+     * payload是否已经填充完毕
+     *
+     * @return boolean
+     */
+    public boolean isPayloadFulfilled()
+    {
+        //TODO: isPayloadFulfilled not implemented created at 2023/7/14 16:16
+        throw new RuntimeException("isPayloadFulfilled not implemented");
     }
 }

@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 @Getter
 @Setter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @ToString
 @EqualsAndHashCode
 public class PayloadId {
