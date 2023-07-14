@@ -10,4 +10,7 @@ public class PreRequestException extends Exception {
     public PreRequestException(String string) {
         super(string);
     }
+    public PreRequestException() {
+        super();
+    }
 }
