@@ -1,5 +1,8 @@
 package wang.skycloud.JWTEA.Client.PreRequest.Exceptions;
 
+import lombok.RequiredArgsConstructor;
+import wang.skycloud.JWTEA.Client.PreRequest.PreRequestPayload;
+
 /**
  * payload包含空字段异常
  *
@@ -8,4 +11,12 @@ package wang.skycloud.JWTEA.Client.PreRequest.Exceptions;
  * @see wang.skycloud.JWTEA.Client.PreRequest.PreRequestPayload,wang.skycloud.JWTEA.Client.PreRequest.PayloadId
  */
 public class PayloadContainsNullException extends PreRequestException{
+    private final PreRequestPayload payload;
+
+
+    public PayloadContainsNullException(PreRequestPayload payload)
+    {
+        super(payload.toString());
+        this.payload = payload;
+    }
 }
